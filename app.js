@@ -1,41 +1,46 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const path = require('path');
+const messageController = require('./controllers/message.controller');
+const validation = require('./middleware');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
-var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
-app.use(logger('dev'));
+const app = express();
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
 
 // error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+app.use((err, req, res, next) => {
+  res.status(500).send(err);
 });
 
+app.get("/",(req,res,next) => {
+  
+}
+)
+
+app.post("/",(req,res,next) => {
+  
+}
+)
+
+app.patch("/",(req,res,next) => {
+  
+}
+)
+
+app.delete("/",(req,res,next) => {
+  
+}
+)
+
 module.exports = app;
+
+
+// Разработать серверное приложение, обрабатывающее http-запросы на создание и обновление
+// сообщений форума. Сущность сообщения содержит текст сообщения, email автора, *дату создания
+// сообщения.
+// Создать марштуры используя методы use, get, post, patch, delete (выбрать нужное).
+// Используйте промежуточные обработчики (middleware), например, для валидации email, текста
+// сообщения (минимальная и максимальная длина), *даты (например, не позже сегодня) и т.п.
+// Предусмотреть наличие стандартного обработчика ошибок.
+// Соблюдать оговоренную структуру проекта (отдельное хранение middleware, контроллеров).
+// Requests для тестирования работы приложения сохранить в папке requests.
+// (По сути, нужно повторить то, что выполняли на занятии, только для другой сущности).
