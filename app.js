@@ -11,28 +11,19 @@ app.use((err, req, res, next) => {
   res.status(500).send(err);
 });
 
-app.get("/",(req,res,next) => {
-  
-}
-)
+app.get('/posts', messageController.getMessage);
 
-app.post("/",(req,res,next) => {
-  
-}
-)
+app.post(
+  '/posts',
+  // validation.messageValidation,
+  messageController.createMessage
+);
 
-app.patch("/",(req,res,next) => {
-  
-}
-)
+app.patch('/update', messageController.updateMessage);
 
-app.delete("/",(req,res,next) => {
-  
-}
-)
+app.delete('/delete', messageController.deleteMessage);
 
 module.exports = app;
-
 
 // Разработать серверное приложение, обрабатывающее http-запросы на создание и обновление
 // сообщений форума. Сущность сообщения содержит текст сообщения, email автора, *дату создания
