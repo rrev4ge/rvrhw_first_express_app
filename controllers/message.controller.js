@@ -6,7 +6,7 @@ module.exports.createMessage = (req, res) => {
   const newMessage = {
     id: (messages.size + 1).toString(),
     ...body,
-    date: Date(),
+    date: body.date ? body.date : new Date(),
   };
   messages.set(newMessage.id, newMessage);
   res.status(201).send(newMessage);
@@ -30,7 +30,7 @@ module.exports.updateMessage = (req, res) => {
   messages.set(postID, {
     ...preparedMessage,
     ...body,
-    update: Date().toString(),
+    update: new Date(),
   });
   res.status(201).send(messages.get(postID));
 };

@@ -13,7 +13,7 @@ app.use((err, req, res, next) => {
 app.get('/posts', messageController.getMessage);
 
 app.post(
-  '/posts',
+  '/new_post',
   validation.messageValidation,
   messageController.createMessage
 );

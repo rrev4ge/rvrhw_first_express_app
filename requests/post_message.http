@@ -1,7 +1,8 @@
-POST http://localhost:3000/posts
+POST http://localhost:3000/new_post
 Content-Type: application/json
 
 {
     "email":"jdou@void.net",
-    "message":"Laborum molestias illo. Expedita consequatur sit eius quas suscipit vel et pariatur doloribus. Aperiam est eius. Itaque temporibus ut natus nihil et eligendi autem aliquid enim. Aut officia quis. Nihil voluptas aperiam eos cumque tempore eveniet quo."
+    "message":"Laborum molestias illo. Expedita consequatur sit eius quas suscipit vel et pariatur doloribus. Aperiam est eius. Itaque temporibus ut natus nihil et eligendi autem aliquid enim. Aut officia quis. Nihil voluptas aperiam eos cumque tempore eveniet quo.",
+    "date": "2020-12-04T12:25:09.493Z"
 }
