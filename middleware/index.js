@@ -1,1 +1,1 @@
-module.exports.validate = require('./validation.mw');
+module.exports.validation = require('./validation.mw');

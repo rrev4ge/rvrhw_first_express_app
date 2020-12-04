@@ -6,7 +6,7 @@ module.exports.createMessage = (req, res) => {
   const newMessage = {
     id: (messages.size + 1).toString(),
     ...body,
-    date: Date().toString(),
+    date: Date(),
   };
   messages.set(newMessage.id, newMessage);
   res.status(201).send(newMessage);

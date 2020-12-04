@@ -1,5 +1,3 @@
-const { request } = require('../app');
-
 const http = require('http');
 
 const { PORT } = require('../settings/CONSTANTS');
