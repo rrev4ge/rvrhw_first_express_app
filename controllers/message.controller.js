@@ -14,8 +14,8 @@ module.exports.createMessage = (req, res) => {
 
 module.exports.getMessage = (req, res) => {
   req.query.postID
-    ? res.status(201).send(messages.get(req.query.postID))
-    : res.status(201).send(Object.fromEntries(messages));
+    ? res.status(200).send(messages.get(req.query.postID))
+    : res.status(200).send(Object.fromEntries(messages));
 };
 
 module.exports.updateMessage = (req, res) => {
@@ -42,5 +42,5 @@ module.exports.deleteMessage = (req, res) => {
   const messageLink = messages.get(postID);
   const preparedMessage = { ...messageLink };
   messages.delete(postID);
-  res.status(201).send(preparedMessage);
+  res.status(202).send(preparedMessage);
 };
